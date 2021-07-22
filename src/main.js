@@ -5,6 +5,8 @@ import data from './data/ghibli/ghibli.js';
 
 console.log(example, data);
 
+//ejemplo de filter y map
+
 const peliculas = data.films;
 console.table (peliculas);
 
