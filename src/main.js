@@ -1,9 +1,24 @@
 import { example } from './data.js';
 // import data from './data/lol/lol.js';
-import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
+import data from './data/ghibli/ghibli.js';
+
 
 console.log(example, data);
+
+const peliculas = data.films;
+console.table (peliculas);
+
+function filtrarNombres (title) {
+    let titulosPeliculas = ''; 
+    titulosPeliculas = data.films.filter(movie => movie.director === title);
+
+   // titulosPeliculas = data.films.filter(movie => movie.title === title);
+    console.log(typeof(titulosPeliculas));
+    console.table(titulosPeliculas);
+    return titulosPeliculas[3].people.map(personaje => personaje.name);
+
+}
+console.log(filtrarNombres("Hayao Miyazaki"));
 
 const btn = document.querySelector('#btnNav');
 btn.addEventListener ('click', () => {
