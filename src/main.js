@@ -22,6 +22,8 @@ function filtrarNombres (title) {
 }
 console.log(filtrarNombres("Hayao Miyazaki"));
 
+
+
 const btn = document.querySelector('#btnNav');
 btn.addEventListener ('click', () => {
     if (document.getElementById('btnNav')) {
