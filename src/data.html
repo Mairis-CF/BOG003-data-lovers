@@ -1,0 +1,53 @@
+  <!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width initial-scale = 1.0" />
+  <meta charset="utf-8" />
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Muli:300" rel="stylesheet">
+</head>
+
+<body class="body-data">
+<div class="container-header"><center><h1 class="header-text">Sobre peliculas del Studio Ghibli</h1>
+<h3 class="conoce-peliculas">¡Conoce todo sobre tus peliculas favoritas!</h3></center></div>
+  <div class="barra">
+    <h2>Menú</h2><img src="media/menu.png">
+    <ul>
+     
+     <li> <a class = "barra-item" href="">Directores</a></li>
+      <li> <a class = "barra-item" href="">Peliculas</a></li>
+       <li> <a class = "barra-item" href="">Personajes</a></li>
+        <li> <a class = "barra-item" href="">Datos curiosos</a></li>
+         <li> <a class = "barra-item" href="">Musica</a></li>
+          <br>
+         <li><button class="btn-inicio" onclick="location.href='index.html'">Inicio</button></li>
+      
+    </ul>
+
+  </div>
+
+ <div class="row" id="items"></div>
+
+    <template id="template-card">
+        <div class="colum">
+            <div class="card">
+                <img src="" alt="" class="img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Titulo</h5>
+                    <button class="btn-card">Ver más</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </template>
+
+  <script src="main.js" type="module"></script> 
+</body>
+
+</html>
