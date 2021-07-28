@@ -359,7 +359,7 @@ export default {
       "producer": "Hayao Miyazaki",
       "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/4/48/Kiki%27s_Delivery_Service_%282%29.jpg",
       "release_date": "1989",
-      "rt_score": "96",
+     "rt_score": "96",
       "people": [
         {
           "id": "4151abc6-1a9e-4e6a-5678-aac05ra641js",
