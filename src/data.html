@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Varela+Round" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Merriweather|Muli:300" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/'-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="body-data">
@@ -18,7 +19,7 @@
     <ul>
      
      <li> <a class = "barra-item" href="">Directores</a></li>
-      <li> <a class = "barra-item" href="">Peliculas</a></li>
+     <li> <a class = "barra-item" href="">Peliculas</a></li>
        <li> <a class = "barra-item" href="">Personajes</a></li>
         <li> <a class = "barra-item" href="">Datos curiosos</a></li>
          <li> <a class = "barra-item" href="">Musica</a></li>
@@ -29,6 +30,18 @@
 
   </div>
 
+  <!--botón desplegable de filter-->
+<div class='dropdown'>
+		<div class='title pointerCursor'>Filtrar</div>
+		
+		<div class='menu pointerCursor hide'>
+			<div class='option' id='option1'>Más antiguas</div>
+			<div class='option' id='option2'>Más recientes</div>
+		</div>
+
+	</div>
+
+  <!--tarjetas de peliculas-->
  <div class="row" id="items"></div>
 
     <template id="template-card">
@@ -37,6 +50,7 @@
                 <img src="" alt="" class="img-top">
                 <div class="card-body">
                     <h5 class="card-title">Titulo</h5>
+                    <h6 class="año">Año</h6>
                     <button class="btn-card">Ver más</button>
 
                 </div>

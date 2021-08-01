@@ -1,13 +1,13 @@
-import { example, anotherExample } from '../src/data.js';
+import { filterFechas, anotherExample } from '../src/data.js';
 
 
-describe('example', () => {
+describe('filterFechas', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filterFechas).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('returns `filterFechas`', () => {
+    expect(filterFechas()).toBe('boolean');
   });
 });
 
