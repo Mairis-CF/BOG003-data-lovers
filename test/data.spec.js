@@ -6,8 +6,9 @@ describe('filterFechas', () => {
     expect(typeof filterFechas).toBe('function');
   });
 
+  
   it('returns `filterFechas`', () => {
-    expect(filterFechas()).toBe('boolean');
+    expect(filterFechas()).toBe('function');
   });
 });
 
