@@ -42,17 +42,22 @@ const mostrarcard = peliculas => {
 };
 mostrarcard(peliculas);
 
+//Función que efectua el botón más recientes y muestra el array filterDataNews
 
 const btnFilterNews = document.getElementById('BtnFilter')
 if (btnFilterNews) {
 
 btnFilterNews.addEventListener('change', function() {
-	items.innerHTML = ''
+	clearItems()
 	mostrarcard(filterDataNews())
 })
 }
 
+//función que limpia el contenedor de tarjetas
 
+function clearItems(){
+	items.innerHTML = ''
+}
 
 
 
