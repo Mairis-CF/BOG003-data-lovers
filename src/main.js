@@ -40,14 +40,24 @@ const mostrarcard = peliculas => {
 };
 mostrarcard(peliculas);
 
-/*
-const btnFilter = document.getElementById('btn_Filter');
-btnFilter.addEventListener('click' , () => {
-	const peliculas2 = peliculas.slice(0,5)
-	mostrarcard(peliculas2);
+//Función que efectua el botón más recientes y muestra el array filterDataNews
+
+const btnFilterNews = document.getElementById('BtnFilter')
+if (btnFilterNews) {
+
+btnFilterNews.addEventListener('change', function() {
+	clearItems()
+	mostrarcard(filterDataNews())
+})
 }
-)
-*/
+
+//función que limpia el contenedor de tarjetas
+
+function clearItems(){
+	items.innerHTML = ''
+}
+
+
 
 
 //ventana modal desplegada  automaticamente al cargar la página de inicio
