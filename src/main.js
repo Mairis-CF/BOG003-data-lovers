@@ -1,7 +1,9 @@
 
 import data from './data/ghibli/ghibli.js';
-import { filterDataNews } from './data.js';
-console.table(filterDataNews())
+import { filterDataNews,filterDataOlder, SortFilmAZ } from './data.js';
+//console.table(filterDataNews())
+//console.table(filterDataOlder()) 
+console.table( SortFilmAZ); 
 const peliculas = data.films;
 
 
@@ -10,15 +12,11 @@ const peliculas = data.films;
 const nombres = function filtrarNombres(title) {
 	let titulosPeliculas = ''; 
 	//titulosPeliculas = data.films.filter(movie => movie.poster === title);
-
   titulosPeliculas = data.films.filter(movie => movie.title === title);
    
 	console.table(titulosPeliculas);
 	return titulosPeliculas; //.poster.map(personaje => personaje.name);
-
-
 }; 
-
 */
 
 //función para generar tarjetas de peliculas dinamicamente
@@ -85,4 +83,3 @@ document.addEventListener('DOMContentLoaded', function mostrarModal() {
 		}
 	}
 })
-
