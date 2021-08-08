@@ -1,7 +1,8 @@
 
 import data from './data/ghibli/ghibli.js';
-import { filterDataNews } from './data.js';
-console.table(filterDataNews())
+import { filterDataNews,filterDataOlder, SortAZ } from './data.js';
+console.table(filterDataOlder()) 
+console.table( SortAZ); 
 const peliculas = data.films;
 
 
@@ -62,7 +63,7 @@ const mostrarcard = peliculas => {
 };
 mostrarcard(peliculas);
 
-//Función que efectua el botón más recientes y muestra el array filterDataNews
+//Función que efectua el botón de filter
 
 const btnFilterNews = document.getElementById('BtnFilter')
 if (btnFilterNews) {
@@ -86,6 +87,4 @@ if (optionAll){
 function clearItems(){
 	items.innerHTML = ''
 }
-
-
 
