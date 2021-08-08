@@ -1,5 +1,6 @@
 import data from './data/ghibli/ghibli.js';
 const Filter_dates = data.films;
+console.table(Filter_dates);
 //función que filtra el array que contiene la data general para crear otro array de menor longitud que muestra las peliculas más recientes. 
 
 export function filterDataNews() {
@@ -22,6 +23,10 @@ export function filterDataNews() {
 /*aqui abajo comienza la función filterDataOlder()  donde se filtran las peliculas cuyas fechas 
 de lanzamiento sean menores al 2000
 y se guardan en un nuevo array */
-export const anotherExample = () => {
+
+
+
+export const sortZA = () => {
+
   return 'OMG';
 };

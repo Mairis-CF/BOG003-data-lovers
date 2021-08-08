@@ -6,62 +6,6 @@ const peliculas = data.films;
 
 
 
-/*
-const nombres = function filtrarNombres(title) {
-	let titulosPeliculas = ''; 
-	//titulosPeliculas = data.films.filter(movie => movie.poster === title);
-
-  titulosPeliculas = data.films.filter(movie => movie.title === title);
-   
-	console.table(titulosPeliculas);
-	return titulosPeliculas; //.poster.map(personaje => personaje.name);
-
-
-}; 
-
-*/
-
-//función para generar tarjetas de peliculas dinamicamente
-//el parametro peliculas se encuentra anteriormente como constante
-
-const items = document.getElementById('items');
-const templateCard = document.getElementById('template-card').content;
-const fragment = document.createDocumentFragment();
-
-
-const mostrarcard = peliculas => {
-	peliculas.forEach(pelicula => {
-		templateCard.querySelector('h5').textContent = pelicula.title
-		templateCard.querySelector('h6').textContent = pelicula.release_date
-		templateCard.querySelector('img').setAttribute('src', pelicula.poster)
-		const clone = templateCard.cloneNode(true)
-
-		fragment.appendChild(clone)
-	});
-	items.appendChild(fragment);
-};
-mostrarcard(peliculas);
-
-//Función que efectua el botón más recientes y muestra el array filterDataNews
-
-const btnFilterNews = document.getElementById('BtnFilter')
-if (btnFilterNews) {
-
-btnFilterNews.addEventListener('change', function() {
-	clearItems()
-	mostrarcard(filterDataNews())
-})
-}
-
-//función que limpia el contenedor de tarjetas
-
-function clearItems(){
-	items.innerHTML = ''
-}
-
-
-
-
 //ventana modal desplegada  automaticamente al cargar la página de inicio
 //la ventana se muestra solo luego de que el body este cargado pero esto podria hacerse retirando el atributo 'hide' de su clase css
 document.addEventListener('DOMContentLoaded', function mostrarModal() {
@@ -95,4 +39,53 @@ document.addEventListener('DOMContentLoaded', function mostrarModal() {
 		}
 	}
 })
+
+
+//función para generar tarjetas de peliculas dinamicamente
+//el parametro peliculas se encuentra anteriormente como constante
+
+const items = document.getElementById('items');
+const templateCard = document.getElementById('template-card').content;
+const fragment = document.createDocumentFragment();
+
+
+const mostrarcard = peliculas => {
+	peliculas.forEach(pelicula => {
+		templateCard.querySelector('h5').textContent = pelicula.title
+		templateCard.querySelector('h6').textContent = pelicula.release_date
+		templateCard.querySelector('img').setAttribute('src', pelicula.poster)
+		const clone = templateCard.cloneNode(true)
+
+		fragment.appendChild(clone)
+	});
+	items.appendChild(fragment);
+};
+mostrarcard(peliculas);
+
+//Función que efectua el botón más recientes y muestra el array filterDataNews
+
+const btnFilterNews = document.getElementById('BtnFilter')
+if (btnFilterNews) {
+
+btnFilterNews.addEventListener('change', function() {
+	clearItems()
+	mostrarcard(filterDataNews())
+})
+}
+
+const optionAll = document.getElementById('optionAll')
+if (optionAll){
+	optionAll.addEventListener('change', function() {
+		clearItems()
+		mostrarcard(peliculas)
+	})
+}
+
+//función que limpia el contenedor de tarjetas
+
+function clearItems(){
+	items.innerHTML = ''
+}
+
+
 
