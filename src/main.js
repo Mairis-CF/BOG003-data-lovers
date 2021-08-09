@@ -1,9 +1,15 @@
 
 import data from './data/ghibli/ghibli.js';
-import { filterDataNews,filterDataOlder, SortAZ } from './data.js';
-console.table(filterDataOlder()) 
-console.table( SortAZ); 
+import { filterDataNews, filterDataOlder } from './data.js';
+import { SortAZ, SortZA } from './data.js';
+//console.table(filterCharacter())
+//console.table(filterDataOlder()) 
+console.table(SortAZ);
+console.table(SortZA);
 const peliculas = data.films;
+const personajes = data.people;
+console.table(personajes);
+
 
 
 
@@ -52,8 +58,9 @@ const fragment = document.createDocumentFragment();
 
 const mostrarcard = peliculas => {
 	peliculas.forEach(pelicula => {
-		templateCard.querySelector('h5').textContent = pelicula.title
+		templateCard.querySelector('h4').textContent = pelicula.title
 		templateCard.querySelector('h6').textContent = pelicula.release_date
+		templateCard.querySelector('h5').textContent = pelicula.director
 		templateCard.querySelector('img').setAttribute('src', pelicula.poster)
 		const clone = templateCard.cloneNode(true)
 
@@ -63,28 +70,42 @@ const mostrarcard = peliculas => {
 };
 mostrarcard(peliculas);
 
-//Función que efectua el botón de filter
+//En el botón filter
 
-const btnFilterNews = document.getElementById('BtnFilter')
-if (btnFilterNews) {
+const Filter = document.getElementById('BtnFilter')
 
-btnFilterNews.addEventListener('change', function() {
-	clearItems()
-	mostrarcard(filterDataNews())
-})
-}
-
-const optionAll = document.getElementById('optionAll')
-if (optionAll){
-	optionAll.addEventListener('change', function() {
+Filter.addEventListener('change', () => {
+	if (Filter.value === 'news') {
+		clearItems()
+		mostrarcard(filterDataNews())
+	} else if (Filter.value === 'olders') {
+		clearItems()
+		mostrarcard(filterDataOlder())
+	} else if (Filter.value === 'all') {
 		clearItems()
 		mostrarcard(peliculas)
-	})
+	}
 }
+)
+
+
+//En el botón sort
+
+const Sort = document.getElementById('BtnSort')
+
+Sort.addEventListener('change', () => {
+	if (Sort.value === 'AZ') {
+		clearItems()
+		mostrarcard(SortAZ)
+	} else if (Sort.value === 'ZA') {
+		clearItems()
+		mostrarcard(SortZA)
+	}
+})
 
 //función que limpia el contenedor de tarjetas
 
-function clearItems(){
+function clearItems() {
 	items.innerHTML = ''
 }
 

@@ -297,7 +297,7 @@
 
 /*estilos al botón de filtrado*/
 
-#BtnFilter {
+#BtnFilter, #BtnSort{
   width: 120px;
   height: 40px;
   border-radius: 15px;
