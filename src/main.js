@@ -1,9 +1,10 @@
 
 import data from './data/ghibli/ghibli.js';
-import { filterDataNews,filterDataOlder, SortFilmAZ } from './data.js';
+import { filterDataNews,filterDataOlder, SortFilmAZ} from './data.js';
 //console.table(filterDataNews())
 //console.table(filterDataOlder()) 
-console.table( SortFilmAZ); 
+console.table( SortFilmAZ);
+
 const peliculas = data.films;
 
 

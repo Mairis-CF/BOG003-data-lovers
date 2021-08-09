@@ -38,7 +38,7 @@ export function filterDataOlder(){
  //funcion sort de A-Z
 export let SortFilmAZ=Filter_dates.sort((a,b) => (a.title > b.title ? 1 : -1 ));
  
-
+ 
 
 export const anotherExample = () => {
   return 'OMG';
