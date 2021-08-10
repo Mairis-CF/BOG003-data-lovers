@@ -43,5 +43,7 @@ export const sortAZ = productions.sort((a, b) => (a.title > b.title ? 1 : -1));
 console.log(sortAZ)
 //función sort Z-A
 
-export const sortZA = productions.sort((a, b) => (b.title > a.title ? 1 : -1));
+export const sortZA = function(productions){
+  return productions.sort((a, b) => (b.title > a.title ? 1 : -1));
+}
 

@@ -98,7 +98,7 @@ sort.addEventListener('change', () => {
 		console.table(sortAZ)
 	} else if (sort.value === 'ZA') {
 		clearItems()
-		mostrarcard(sortZA)
+		mostrarcard(sortZA())
 		console.log('sortZA')
 		console.table(sortZA)
 	}

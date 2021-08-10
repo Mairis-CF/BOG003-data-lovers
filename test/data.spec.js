@@ -60,8 +60,8 @@ describe('filterDataNews', () => {
 
 
 describe('sortZA', () => {
-  it('is an object', () => {
-    expect(typeof sortZA).toBe('object');
+  it('is a function', () => {
+    expect(typeof sortZA).toBe('function');
   });
 
 const moviesSortZA = [
