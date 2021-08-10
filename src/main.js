@@ -7,7 +7,10 @@ import { sortAZ, sortZA } from './data.js';
 
 const peliculas = data.films;
 
-
+//función que limpia el contenedor de la data
+function clearItems() {
+	items.innerHTML = ''
+}
 
 
 //ventana modal desplegada  automaticamente al cargar la página de inicio
@@ -85,7 +88,6 @@ filter.addEventListener('change', () => {
 }
 )
 
-
 //En el botón sort
 
 const sort = document.getElementById('btnSort')
@@ -103,9 +105,4 @@ sort.addEventListener('change', () => {
 })
 
 
-//función que limpia el contenedor de tarjetas
-
-function clearItems() {
-	items.innerHTML = ''
-}
 
