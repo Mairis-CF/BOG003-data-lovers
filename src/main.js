@@ -69,16 +69,16 @@ mostrarcard(peliculas);
 
 //En el botón filter
 
-const Filter = document.getElementById('BtnFilter')
+const filter = document.getElementById('btnFilter')
 
-Filter.addEventListener('change', () => {
-	if (Filter.value === 'news') {
+filter.addEventListener('change', () => {
+	if (filter.value === 'news') {
 		clearItems()
 		mostrarcard(filterDataNews())
-	} else if (Filter.value === 'olders') {
+	} else if (filter.value === 'olders') {
 		clearItems()
 		mostrarcard(filterDataOlder())
-	} else if (Filter.value === 'all') {
+	} else if (filter.value === 'all') {
 		clearItems()
 		mostrarcard(peliculas)
 	}
@@ -88,7 +88,7 @@ Filter.addEventListener('change', () => {
 
 //En el botón sort
 
-const sort = document.getElementById('BtnSort')
+const sort = document.getElementById('btnSort')
 
 sort.addEventListener('change', () => {
 	if (sort.value === 'AZ') {

@@ -130,7 +130,7 @@
 
 /*estilos al botón de filtrado*/
 
-#BtnFilter, #BtnSort{
+#btnFilter, #btnSort{
   width: 120px;
   height: 40px;
   border-radius: 15px;
