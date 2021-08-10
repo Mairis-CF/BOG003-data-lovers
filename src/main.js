@@ -1,62 +1,11 @@
 
 import data from './data/ghibli/ghibli.js';
-import { filterDataNews,filterDataOlder, SortFilmAZ} from './data.js';
-//console.table(filterDataNews())
+import { filterDataNews, filterDataOlder } from './data.js';
+import { sortAZ,orderZA  } from './data.js';
+//console.table(filterCharacter())
 //console.table(filterDataOlder()) 
-console.table( SortFilmAZ);
 
 const peliculas = data.films;
-
-
-
-/*
-const nombres = function filtrarNombres(title) {
-	let titulosPeliculas = ''; 
-	//titulosPeliculas = data.films.filter(movie => movie.poster === title);
-  titulosPeliculas = data.films.filter(movie => movie.title === title);
-   
-	console.table(titulosPeliculas);
-	return titulosPeliculas; //.poster.map(personaje => personaje.name);
-}; 
-*/
-
-//función para generar tarjetas de peliculas dinamicamente
-//el parametro peliculas se encuentra anteriormente como constante
-
-const items = document.getElementById('items');
-const templateCard = document.getElementById('template-card').content;
-const fragment = document.createDocumentFragment();
-
-
-const mostrarcard = peliculas => {
-	peliculas.forEach(pelicula => {
-		templateCard.querySelector('h5').textContent = pelicula.title
-		templateCard.querySelector('h6').textContent = pelicula.release_date
-		templateCard.querySelector('img').setAttribute('src', pelicula.poster)
-		const clone = templateCard.cloneNode(true)
-
-		fragment.appendChild(clone)
-	});
-	items.appendChild(fragment);
-};
-mostrarcard(peliculas);
-
-//Función que efectua el botón más recientes y muestra el array filterDataNews
-
-const btnFilterNews = document.getElementById('BtnFilter')
-if (btnFilterNews) {
-
-btnFilterNews.addEventListener('change', function() {
-	clearItems()
-	mostrarcard(filterDataNews())
-})
-}
-
-//función que limpia el contenedor de tarjetas
-
-function clearItems(){
-	items.innerHTML = ''
-}
 
 
 
@@ -94,3 +43,68 @@ document.addEventListener('DOMContentLoaded', function mostrarModal() {
 		}
 	}
 })
+
+
+//función para generar tarjetas de peliculas dinamicamente
+//el parametro peliculas se encuentra anteriormente como constante
+
+const items = document.getElementById('items');
+const templateCard = document.getElementById('template-card').content;
+const fragment = document.createDocumentFragment();
+
+
+const mostrarcard = peliculas => {
+	peliculas.forEach(pelicula => {
+		templateCard.querySelector('h4').textContent = pelicula.title
+		templateCard.querySelector('h6').textContent = pelicula.release_date
+		templateCard.querySelector('h5').textContent = pelicula.director
+		templateCard.querySelector('img').setAttribute('src', pelicula.poster)
+		const clone = templateCard.cloneNode(true)
+
+		fragment.appendChild(clone)
+	});
+	items.appendChild(fragment);
+};
+mostrarcard(peliculas);
+
+//En el botón filter
+
+const Filter = document.getElementById('BtnFilter')
+
+Filter.addEventListener('change', () => {
+	if (Filter.value === 'news') {
+		clearItems()
+		mostrarcard(filterDataNews())
+	} else if (Filter.value === 'olders') {
+		clearItems()
+		mostrarcard(filterDataOlder())
+	} else if (Filter.value === 'all') {
+		clearItems()
+		mostrarcard(peliculas)
+	}
+}
+)
+
+
+//En el botón sort
+
+const sort = document.getElementById('BtnSort');
+
+sort.addEventListener('change', () => {
+	if (sort.value === 'AZ') {
+		clearItems()
+		mostrarcard(sortAZ)
+		console.log("advEnenlistener", sortAZ)
+	} else if (sort.value === 'ZA') {
+		clearItems()
+		mostrarcard(orderZA)
+		console.log("advEnenlistener", orderZA)
+	}
+})
+
+//función que limpia el contenedor de tarjetas
+
+function clearItems() {
+	items.innerHTML = ''
+}
+

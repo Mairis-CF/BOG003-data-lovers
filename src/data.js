@@ -1,10 +1,12 @@
 
 import data from './data/ghibli/ghibli.js';
-const Filter_dates = data.films;
+const productions = data.films;
+console.table(productions);
+
 //función que filtra el array que contiene la data general para crear otro array de menor longitud que muestra las peliculas más recientes. 
 
 export function filterDataNews() {
- let filteredArray = Filter_dates.filter(movie => {
+  let filteredArray = productions.filter(movie => {
     let filteredNew_movies = movie.release_date;
 
     if (filteredNew_movies > 2000) { /* si las fechas de lanzamiento son mayores al 2000 entonces retornar un boolean que de ser true
@@ -21,8 +23,9 @@ export function filterDataNews() {
 /*aqui abajo comienza la función filterDataOlder()  donde se filtran las peliculas cuyas fechas 
 de lanzamiento sean menores al 2000
 y se guardan en un nuevo array */
-export function filterDataOlder(){
-  let filterOlder = Filter_dates.filter(movie => {
+
+export function filterDataOlder() {
+  let filterOlder = productions.filter(movie => {
     let filteredOld_movies = movie.release_date;
 
     if (filteredOld_movies < 2000) { /* si las fechas de lanzamiento son menores al 2000 entonces retornar un boolean que de ser true
@@ -33,14 +36,17 @@ export function filterDataOlder(){
     }
   })
   return filterOlder
-  
+
 }
- //funcion sort de A-Z
-export let SortFilmAZ=Filter_dates.sort((a,b) => (a.title > b.title ? 1 : -1 ));
- 
- 
 
-export const anotherExample = () => {
-  return 'OMG';
-};
+//funcion sort de A-Z
+export let sortAZ = productions.sort((a, b) => (a.title > b.title) ? 1 : ((b.title> a.title) ? -1 : 0));
 
+console.log("sortAZ", sortAZ)
+
+
+//función sort Z-A
+
+export let orderZA=sortAZ.reverse()
+
+console.log("sortZA", orderZA)
