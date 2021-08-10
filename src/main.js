@@ -1,14 +1,11 @@
 
 import data from './data/ghibli/ghibli.js';
 import { filterDataNews, filterDataOlder } from './data.js';
-import { SortAZ, SortZA } from './data.js';
+import { sortAZ, sortZA } from './data.js';
 //console.table(filterCharacter())
 //console.table(filterDataOlder()) 
-console.table(SortAZ);
-console.table(SortZA);
+
 const peliculas = data.films;
-const personajes = data.people;
-console.table(personajes);
 
 
 
@@ -91,17 +88,22 @@ Filter.addEventListener('change', () => {
 
 //En el botón sort
 
-const Sort = document.getElementById('BtnSort')
+const sort = document.getElementById('BtnSort')
 
-Sort.addEventListener('change', () => {
-	if (Sort.value === 'AZ') {
+sort.addEventListener('change', () => {
+	if (sort.value === 'AZ') {
 		clearItems()
-		mostrarcard(SortAZ)
-	} else if (Sort.value === 'ZA') {
+		mostrarcard(sortAZ)
+		console.log('sortAZ')
+		console.table(sortAZ)
+	} else if (sort.value === 'ZA') {
 		clearItems()
-		mostrarcard(SortZA)
+		mostrarcard(sortZA)
+		console.log('sortZA')
+		console.table(sortZA)
 	}
 })
+
 
 //función que limpia el contenedor de tarjetas
 

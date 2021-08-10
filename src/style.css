@@ -1,76 +1,18 @@
-.btn-nav {
-  border-style: none;
-  font-family: "Varela Round", Sans-Serif;
-  font-size: 18px;
-  position: relative;
 
-  background-color: #ffd2ec9d;
-  width: 160px;
-  height: 30px;
-  align-self: left;
-  color: rgba(0, 0, 0, 0.555);
-  border-radius: 5px;
-}
-
-.btn-nav:hover {
-  box-shadow: 0 4px 16px #ffddd2;
-  transition: all 0.3s ease;
-}
-
-.btn-start {
-  width: 180px;
-  height: 50px;
-  border-radius: 15px;
-  border-width: 5px;
-  border-color: #ffffff;
-  color: #fafafa;
-  background-color: #f7b5ef00;
-  font-family: "Varela Round", Sans-Serif;
-  font-size: 20px;
-  margin-bottom: 5%;
-}
-
-.btn-start:hover {
-  color: #ffddd2;
-  box-shadow: 0 10px 20px #e7cce4;
-  transition: all 0.3s ease;
-  background-color: #b982c2;
-}
-
-.body-style {
+.body-data {
   margin: 0%;
   padding: 0px;
-  height: 50%;
+  margin-top: 0%;
   height: 100vh;
   line-height: 1.5em;
-  /* display: flex;
-  justify-content: center;
-  place-items: center;*/
-  background: linear-gradient(90deg, #b982c2, #f0a7a7, #e7b4d4);
+  background-color: rgb(241, 198, 245);
+  box-sizing: border-box;
+  font-family: "Varela Round", Sans-Serif;
 }
 
+
 @media (max-width: 990px) {
-  .body-style {
-    background: url(media/phone1.jpg);
-  }
-
-  .container1 {
-    background-color: rgba(0, 0, 12, 0.459);
-    border-radius: 10%;
-    color: #e7cce4;
-    align-items: auto;
-    object-position: center;
-    width: 85%;
-    min-height: 90%;
-    padding-bottom: 5%;
-    padding-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .container-texto {
-    padding: 5px;
-  }
+  
 
   .titulo {
     padding: 5px;
@@ -81,116 +23,20 @@
     line-height: 40px;
   }
 
-  .cita:hover {
-    display: none;
-  }
-
-  .sidenav a {
-    margin-top: -23%;
-    position: fixed;
-  }
-  .slider {
-    display: none;
-  }
+ 
   .modalContainer .modal-content {
     width: 70%;
   }
 
-  .modal-footer {
-    display: none;
-  }
 }
 
-/* comienza clase del slider */
-.slider {
-  width: 100%;
-  height: relative;
-  overflow: hidden;
-  position: absolute;
-  background-attachment: fixed;
-  size: cover;
-  margin-top: 0%;
-  margin-bottom: 20%;
-}
-
-.slides {
-  width: 500%;
-  height: 500px;
-  display: flex;
-}
-
-.slides input {
-  display: none;
-}
-
-.slide {
-  width: 20%;
-  transition: 2s;
-}
-
-.slide img {
-  width: 100%;
-  height: 120%;
-  size: cover;
-  background-attachment: fixed;
-}
-
-.navegacion-manual {
-  position: absolute;
-  width: 100%;
-  margin-top: -50px;
-  display: flex;
-  justify-content: center;
-}
-
-.manual-btn {
-  border: 2px solid lightblue;
-  padding: 5px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 1s;
-}
-
-.manual-btn:not(:last-child) {
-  margin-right: 40px;
-}
-
-.manual-btn:hover {
-  background: lightblue;
-}
-
-#radio1:checked ~ .uno {
-  margin-left: 0;
-}
-
-#radio2:checked ~ .uno {
-  margin-left: -20%;
-}
-
-#radio3:checked ~ .uno {
-  margin-left: -40%;
-}
-
-#radio4:checked ~ .uno {
-  margin-left: -60%;
-}
 
 /*Contenido textual de la pagina*/
-
-.container1 {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30%;
-  color: #f5e1f2;
-  align-items: center;
-  object-position: center;
-  padding-top: 10%;
-}
 
 .titulo {
   font-family: "Varela Round", Sans-Serif;
   font-size: 48px;
-  color: linear-gradient(90deg, #b982c2, #f0a7a7, #e7b4d4);
+  
 }
 
 .texto {
@@ -282,19 +128,6 @@
 
 /*fin ventana modal */
 
-/*estilos aplicados en Data.html */
-
-.body-data {
-  margin: 0%;
-  padding: 0px;
-  margin-top: 0%;
-  height: 100vh;
-  line-height: 1.5em;
-  background-color: rgb(241, 198, 245);
-  box-sizing: border-box;
-  font-family: "Varela Round", Sans-Serif;
-}
-
 /*estilos al botón de filtrado*/
 
 #BtnFilter, #BtnSort{
@@ -346,27 +179,6 @@
   padding: 10px 0px;
   background-color: #dbc1e0;
   box-shadow: 0 10px 20px #a7619e;
-}
-
-.btn-card {
-  font-family: "Varela Round", Sans-Serif;
-  width: auto;
-  height: 35px;
-  top: -10%;
-  float: center;
-  position: relative;
-  border-radius: 10px;
-  text-decoration: bold;
-  border-color: #7a5f96;
-  color: #7a5f96;
-  background-color: #f7b5ef00;
-}
-
-.btn-card:hover {
-  color: #ffddd2;
-  box-shadow: 0 10px 16px #eca4e4;
-  transition: all 0.3s ease;
-  background-color: #8133ca;
 }
 
 .card-body {
