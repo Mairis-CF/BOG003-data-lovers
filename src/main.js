@@ -74,10 +74,10 @@ const filter = document.getElementById('btnFilter')
 filter.addEventListener('change', () => {
 	if (filter.value === 'news') {
 		clearItems()
-		mostrarcard(filterDataNews())
+		mostrarcard(filterDataNews(peliculas))
 	} else if (filter.value === 'olders') {
 		clearItems()
-		mostrarcard(filterDataOlder())
+		mostrarcard(filterDataOlder(peliculas))
 	} else if (filter.value === 'all') {
 		clearItems()
 		mostrarcard(peliculas)
@@ -93,13 +93,11 @@ const sort = document.getElementById('btnSort')
 sort.addEventListener('change', () => {
 	if (sort.value === 'AZ') {
 		clearItems()
-		mostrarcard(sortAZ)
-		console.log('sortAZ')
+		mostrarcard(sortAZ(peliculas))
 		console.table(sortAZ)
 	} else if (sort.value === 'ZA') {
 		clearItems()
-		mostrarcard(sortZA())
-		console.log('sortZA')
+		mostrarcard(sortZA(peliculas))
 		console.table(sortZA)
 	}
 })

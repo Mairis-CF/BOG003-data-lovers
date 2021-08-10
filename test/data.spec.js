@@ -1,4 +1,4 @@
-import { filterDataNews, sortZA } from '../src/data.js';
+import { filterDataNews, filterDataOlder } from '../src/data.js';
 
 const moviesToTest = [
   {
@@ -54,12 +54,47 @@ describe('filterDataNews', () => {
   ]
 
   it('To moviesToTest should return those with a relase_date over to 2000', () => {
-    expect(filterDataNews(moviesToTest, moviesToTest.release_date)).toStrictEqual(moviesNews);
+    let result = filterDataNews(moviesToTest);
+    expect(result).toStrictEqual(moviesNews);
+  });
+});
+
+describe('filterDataOlder', () => {
+it('is a function', () =>{
+  expect(typeof filterDataOlder).toBe('function');
+});
+
+const moviesOlder = [ 
+  {
+    "title": "Castle in the Sky",
+    "director": "Hayao Miyazaki",
+    "release_date": "1986",
+    "rt_score": "95",
+  },
+{
+    "title": "My Neighbor Totoro",
+    "director": "Hayao Miyazaki",
+    "release_date": "1988",
+    "rt_score": "93",
+  },
+{
+    "title": "My Neighbors the Yamadas",
+    "director": "Isao Takahata",
+    "release_date": "1999",
+    "rt_score": "75",
+  },
+
+]
+
+
+  it('To moviesToTest should return those with a relase_date lower than 2000', () => {
+    let resultOlder = filterDataOlder(moviesToTest);
+    expect(resultOlder).toStrictEqual(moviesOlder);
   });
 });
 
 
-describe('sortZA', () => {
+/*describe('sortZA', () => {
   it('is a function', () => {
     expect(typeof sortZA).toBe('function');
   });
@@ -101,3 +136,4 @@ const moviesSortZA = [
     expect(sortZA(moviesToTest, moviesToTest.title)).toStrictEqual(moviesSortZA);
   });
 });
+*/
