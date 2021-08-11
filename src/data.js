@@ -1,7 +1,5 @@
-
 import data from './data/ghibli/ghibli.js';
 const productions = data.films;
-console.table(productions);
 
 //función que filtra el array que contiene la data general para crear otro array de menor longitud que muestra las peliculas más recientes. 
 
@@ -40,13 +38,10 @@ export function filterDataOlder() {
 }
 
 //funcion sort de A-Z
-export let sortAZ = productions.sort((a, b) => (a.title > b.title) ? 1 : ((b.title> a.title) ? -1 : 0));
+/*export let sortAZ = productions.sort((a, b) => (a.title > b.title) ? 1 : ((b.title> a.title) ? -1 : 0));
 
 console.log("sortAZ", sortAZ)
 
 
 //función sort Z-A
 
-export let orderZA=sortAZ.reverse()
-
-console.log("sortZA", orderZA)

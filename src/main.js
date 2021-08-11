@@ -1,7 +1,7 @@
 
 import data from './data/ghibli/ghibli.js';
 import { filterDataNews, filterDataOlder } from './data.js';
-import { sortAZ,orderZA  } from './data.js';
+import { sortAZ, sortZA} from './data.js';
 //console.table(filterCharacter())
 //console.table(filterDataOlder()) 
 
@@ -69,16 +69,16 @@ mostrarcard(peliculas);
 
 //En el botón filter
 
-const Filter = document.getElementById('BtnFilter')
+const filter = document.getElementById('btnFilter')
 
-Filter.addEventListener('change', () => {
-	if (Filter.value === 'news') {
+filter.addEventListener('change', () => {
+	if (filter.value === 'news') {
 		clearItems()
 		mostrarcard(filterDataNews())
-	} else if (Filter.value === 'olders') {
+	} else if (filter.value === 'olders') {
 		clearItems()
 		mostrarcard(filterDataOlder())
-	} else if (Filter.value === 'all') {
+	} else if (filter.value === 'all') {
 		clearItems()
 		mostrarcard(peliculas)
 	}
@@ -88,19 +88,22 @@ Filter.addEventListener('change', () => {
 
 //En el botón sort
 
-const sort = document.getElementById('BtnSort');
+const sort = document.getElementById('btnSort')
 
 sort.addEventListener('change', () => {
 	if (sort.value === 'AZ') {
 		clearItems()
 		mostrarcard(sortAZ)
-		console.log("advEnenlistener", sortAZ)
+		console.log('sortAZ')
+		console.table(sortAZ)
 	} else if (sort.value === 'ZA') {
 		clearItems()
-		mostrarcard(orderZA)
-		console.log("advEnenlistener", orderZA)
+		mostrarcard(sortZA())
+		console.log('sortZA')
+		console.table(sortZA)
 	}
 })
+
 
 //función que limpia el contenedor de tarjetas
 
