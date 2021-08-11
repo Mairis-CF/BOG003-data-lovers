@@ -96,11 +96,9 @@ sort.addEventListener('change', () => {
 	if (sort.value === 'AZ') {
 		clearItems()
 		mostrarcard(sortAZ(peliculas))
-		console.table(sortAZ)
 	} else if (sort.value === 'ZA') {
 		clearItems()
 		mostrarcard(sortZA(peliculas))
-		console.table(sortZA)
 	}
 })
 

@@ -1,4 +1,4 @@
-import { filterDataNews, filterDataOlder } from '../src/data.js';
+import { filterDataNews, filterDataOlder, sortZA } from '../src/data.js';
 
 const moviesToTest = [
   {
@@ -94,7 +94,7 @@ const moviesOlder = [
 });
 
 
-/*describe('sortZA', () => {
+describe('sortZA', () => {
   it('is a function', () => {
     expect(typeof sortZA).toBe('function');
   });
@@ -131,9 +131,9 @@ const moviesSortZA = [
     "rt_score": "95",
   },
 ]  
-
+//OUTPUT TEST
   it('To moviesToTest should return a sorted array with an inverse order from Z to A', () => {
-    expect(sortZA(moviesToTest, moviesToTest.title)).toStrictEqual(moviesSortZA);
+    let resultSortZA = sortZA(moviesToTest)
+    expect(resultSortZA).toStrictEqual(moviesSortZA);
   });
 });
-*/
