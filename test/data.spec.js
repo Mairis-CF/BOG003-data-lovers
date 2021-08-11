@@ -131,7 +131,7 @@ const moviesSortZA = [
     "rt_score": "95",
   },
 ]  
-//OUTPUT TEST
+
   it('To moviesToTest should return a sorted array with an inverse order from Z to A', () => {
     let resultSortZA = sortZA(moviesToTest)
     expect(resultSortZA).toStrictEqual(moviesSortZA);
