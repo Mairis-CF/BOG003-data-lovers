@@ -1,9 +1,16 @@
 
 import data from './data/ghibli/ghibli.js';
-import { filterDataNews, filterDataOlder } from './data.js';
-import { sortAZ, sortZA} from './data.js';
+
+import {    
+	filterDataNews, 
+	filterDataOlder,
+	//scoreHigh , 
+	sortAZ, 
+	sortZA, 
+	//average
+} from './data.js';
+ 
 //console.table(filterCharacter())
-//console.table(filterDataOlder()) 
 
 const peliculas = data.films;
 
@@ -96,11 +103,9 @@ sort.addEventListener('change', () => {
 	if (sort.value === 'AZ') {
 		clearItems()
 		mostrarcard(sortAZ(peliculas))
-		console.table(sortAZ)
 	} else if (sort.value === 'ZA') {
 		clearItems()
 		mostrarcard(sortZA(peliculas))
-		console.table(sortZA)
 	}
 })
 

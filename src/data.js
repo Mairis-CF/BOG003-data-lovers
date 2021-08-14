@@ -1,6 +1,6 @@
-import data from './data/ghibli/ghibli.js';
-const productions = data.films;
-console.log(productions)
+//import data from './data/ghibli/ghibli.js';
+//const productions = data.films;
+//console.log(productions)
 
 //función que filtra el array que contiene la data general para crear otro array de menor longitud que muestra las peliculas más recientes. 
 
@@ -41,12 +41,24 @@ export function filterDataOlder(productions) {
 //funcion sort de A-Z
 //export const sortAZ = productions.sort((a, b) => (a.title > b.title ? 1 : -1));
 
-export function sortAZ(productions){
-  return productions.sort((a,b) => (a.title > b.title ? 1 : -1));
+export function sortAZ(productions) {
+  return productions.sort((a, b) => (a.title > b.title ? 1 : -1));
 }
 
 
 export function sortZA(productions) {
-  return productions.sort((a,b) => (b.title > a.title ? 1 : -1));
+  return productions.sort((a, b) => (b.title > a.title ? 1 : -1));
 }
 
+ //funcion para porcentaje de  score> 90 puntos
+export function scoreHigh(productions) {
+  let average = productions.filter(movie =>parseInt(movie.rt_score)>= 90);
+  //console.table(average) 
+  
+  let prom1 = average.length;
+  let prom2 = productions.length
+  let percentaje = (prom1 / prom2) * 100;
+  return percentaje
+
+}
+//console.log(scoreHigh())

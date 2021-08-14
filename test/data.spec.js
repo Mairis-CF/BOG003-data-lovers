@@ -1,4 +1,8 @@
-import { filterDataNews, filterDataOlder } from '../src/data.js';
+import { filterDataNews, 
+  
+  filterDataOlder, 
+ sortZA 
+} from '../src/data.js';
 
 const moviesToTest = [
   {
@@ -96,23 +100,19 @@ const moviesOlder = [
 const testghibli = [
   {
     title: "From Up on Poppy Hill",
-    director: "Gorō Miyazaki",
     release_date: "2011",
   },
   {
     title: "Grave of the Fireflies",
-    director: "Isao Takahata",
     release_date: "1988",
   },
 
   {
     title: "Ponyo on the Cliff by the Sea",
-    director: "Hayao Miyazaki",
     release_date: "2008"
   },
   {
     title: "When Marnie Was There",
-    director: "Hiromasa Yonebayashi",
     release_date: "2014",
   },
 
@@ -124,14 +124,18 @@ describe('filterDataNews', () => {
     expect(typeof filterDataNews).toBe('function');
   });
 
-  const dataReciente = [{
-    title: "Pom Poko",
-    release_date: "1994"
-  },
-
+  const dataReciente = [
   {
     title: "Spirited Away",
     release_date: "2001"
+  },
+  {
+    title: "Ponyo on the Cliff by the Sea",
+    release_date: "2008"
+  },
+  {
+    title: "From Up on Poppy Hill",
+    release_date: "2011",
   },
   {
     title: "The Secret World of Arrietty",
@@ -143,16 +147,15 @@ describe('filterDataNews', () => {
   },];
 
   it('   filtrar peliculas >=2000 ', () => {
-    expect(testghibli).toEqual(
-      expect.arrayContaining(dataReciente),
+    expect(filterDataNews(testghibli)).toEqual(expect.arrayContaining(dataReciente)
     );
   });
+})
 
 
 
 
-
-/*describe('sortZA', () => {
+describe('sortZA', () => {
   it('is a function', () => {
     expect(typeof sortZA).toBe('function');
   });
@@ -191,8 +194,7 @@ const moviesSortZA = [
 ]  
 
   it('To moviesToTest should return a sorted array with an inverse order from Z to A', () => {
-    expect(sortZA(moviesToTest, moviesToTest.title)).toStrictEqual(moviesSortZA);
+    let resultSortZA = sortZA(moviesToTest)
+    expect(resultSortZA).toStrictEqual(moviesSortZA);
   });
 });
-*/ 
-})
