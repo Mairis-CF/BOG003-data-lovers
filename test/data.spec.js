@@ -125,10 +125,7 @@ describe('filterDataNews', () => {
   });
 
   const dataReciente = [
-  {
-    title: "Spirited Away",
-    release_date: "2001"
-  },
+  
   {
     title: "Ponyo on the Cliff by the Sea",
     release_date: "2008"
@@ -137,10 +134,7 @@ describe('filterDataNews', () => {
     title: "From Up on Poppy Hill",
     release_date: "2011",
   },
-  {
-    title: "The Secret World of Arrietty",
-    release_date: "2010",
-  },
+  
   {
     title: "When Marnie Was There",
     release_date: "2014",
