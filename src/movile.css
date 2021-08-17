@@ -55,6 +55,7 @@
     .body-data {
         background: url(media/grid.jpg) no-repeat;
         background-size: cover;
+        background-color: #fdc5fa;
        background-attachment: fixed;
         
     }
