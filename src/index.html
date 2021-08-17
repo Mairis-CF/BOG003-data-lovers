@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width initial-scale = 1.0" />
     <meta charset="utf-8" />
     <title>GhibliNautas</title>
+    <link rel="stylesheet" href="movile.css">
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Noto+Serif|Varela+Round"
@@ -13,6 +14,7 @@
       href="https://fonts.googleapis.com/css?family=Merriweather|Muli:300"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" type="image/jpg" href="media/favicon.ico"/>
   </head>
 
   <body class="body-data">
@@ -25,71 +27,83 @@
       </center>
       <img id="totoro-header" src="media/totoro2.png" />
     </div>
-    <div class="barra">
-      <h2>Menú</h2>
-      <img src="media/menu.png" />
-      <ul>
-        <li><a class="barra-item" href="">Directores</a></li>
-        <li><a class="barra-item" href="">Peliculas</a></li>
-        <li><a id="personajes" class="barra-item" href="">Personajes</a></li>
-        <br />
-        <li>
-          <button class="btn-inicio" onclick="location.href='index.html'">
-            Inicio
-          </button>
-        </li>
-      </ul>
-    </div>
 
     <!--Ventana modal de inicio-->
     <div id="tvesModal" class="modalContainer">
       <div class="modal-content">
         <center>
-              <h1 class="titulo">
-                <p>
-                  Bienvenido a GhibliNautas
-                </p>
-              </h1>
-            
-              <h3 class="texto">
-                <p>
-                 Donde te convertirás en un verdadero fánatico wiki de uno de los estudios de animación más importantes
-                  del mundo, <b>Studio Ghibli.</b>
-                </p>
-             </h3>
-              <div class="cita">
-                <h3>
-                  <p>
-                    “Siempre querré a Ponyo, ya sea un pez, humana o ambas cosas”
-                    <br>
-                    -Ponyo en el acantilado (2008)
-                  </p>
-                </h3>
-              </div>
-              <h2 class="diviertete">
-                <p>
-                  ¡Diviértete!
-                </p>
-              </h2>
-            </center>
-            <center>
-               <button class="close">¡Comenzar!</button>
-            </center> 
+          <h1 class="titulo">
+            <p>Bienvenido a GhibliNautas</p>
+          </h1>
+
+          <h3 class="texto">
+            <p>
+              Donde te convertirás en un verdadero fánatico wiki de uno de los
+              estudios de animación más importantes del mundo,
+              <b>Studio Ghibli.</b>
+            </p>
+          </h3>
+          <div class="cita">
+            <h3>
+              <p>
+                “Siempre querré a Ponyo, ya sea un pez, humana o ambas cosas”
+                <br />
+                -Ponyo en el acantilado (2008)
+              </p>
+            </h3>
+          </div>
+          <h2 class="diviertete">
+            <p>¡Diviértete!</p>
+          </h2>
+        </center>
+        <center>
+          <button class="close">¡Comenzar!</button>
+        </center>
       </div>
     </div>
 
-    <!--botón desplegable de filter-->
-    <select name="selectFilter" id="btnFilter">
-      <option id="optionAll" value="all" selected>Todas</option>
-      <option id="optionOlders" value="olders">Más antiguas</option>
-      <option id="optionNews" value="news">Más recientes</option>
-    </select>
+    <!--Menú lateral en el que se incluyen botones de filtrado y ordenado-->
+    <div id="show-menu" class="menu-icons">
+      <div class="pulse1"></div>
+      <div class="pulse2"></div>
+      <div class="pulse3"></div>
+    </div>
 
-    <!--Botón desplegable de ordenar-->
-        <select name="selectSort" id="btnSort">
-      <option id="optionAZ" value="AZ">A-Z</option>
-      <option id="optionZA" value="ZA">Z-A</option>
-    </select>
+    <div id="nav" class="nav-bar">
+      <br /><span class="close-nav">x</span>
+      <h1 class="menu-title">Menu</h1>
+
+      <ul class="nav-list">
+        <li class="nav-item" id="stadistics">
+          <a class="nav-link">Estadisticas</a>
+        </li>
+        <li class="nav-item">
+          <select name="selectSort" id="btnSort">
+            <option id="optionAZ" value="AZ">A-Z</option>
+            <option id="optionZA" value="ZA">Z-A</option>
+          </select>
+        </li>
+        <li class="nav-item">
+          <select name="selectFilter" id="btnFilter">
+            <option id="optionAll" value="all" selected>Todas</option>
+            <option id="optionOlders" value="olders">Más antiguas</option>
+            <option id="optionNews" value="news">Más recientes</option>
+          </select>
+        </li>
+
+        <li class="nav-item"><button id="btn-Home" class="btn-inicio">Inicio</button></li>
+        <li class="nav-item">
+          <h5>Contactános</h5>
+          <a href="mailto:mairiscastroflorez@gmail.com?"
+            ><img
+              src="media/contactanos.png"
+              role="button"
+              alt="contactanos icon"
+              class="contact-icon"
+          /></a>
+        </li>
+      </ul>
+    </div>
 
     <!--tarjetas de peliculas-->
     <div class="row" id="items"></div>
@@ -98,17 +112,44 @@
       <div class="colum">
         <div class="card">
           <img class="img-top" />
-         <div class="card-body">
-            <h4 class="card-title">Titulo</h4>
+          <div class="card-body">
+            <h3 class="card-title">Titulo</h3>
             <h5 id="director">Director</h5>
             <h6 class="date">Año</h6>
-            
-
+            <img class="score_icon" src="media/score.png" alt="score_icon" />
+            <h4 class="score_rating">Score</h4>
           </div>
         </div>
       </div>
     </template>
 
+
+    <!--Sección de estadisticas-->
+
+    <div id="container-stadistics">
+      <div id= "stadistic-section" class="stadistics-content">
+        <h1>Estadisticas</h1>
+        <h2>
+          Asi ha sido el desempeño de las producciones de estudio Ghibli durante
+          su temporada de estreno en las taquillas japonesas.
+        </h2>
+        <img
+          src="media/score_feedback.png"
+          class="scoreFeedback-icon"
+          alt="scoreFeedback_icon"
+        />
+        <h6>
+          <i
+            >Nota: estas puntuaciones no definen "las mejores producciones" del
+            estudio, por otra parte, hacen referencia a la popularidad obtenida
+            durante su temporada de promoción posterior a su estreno.</i
+          >
+        </h6>
+      </div>
+    </div>
+
+    <!--Imagen vectorial de ondas-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class= "vectorial-wave"fill="#c884f8" fill-opacity="1" d="M0,32L48,58.7C96,85,192,139,288,176C384,213,480,235,576,218.7C672,203,768,149,864,138.7C960,128,1056,160,1152,176C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
     <script src="main.js" type="module"></script>
   </body>
 </html>

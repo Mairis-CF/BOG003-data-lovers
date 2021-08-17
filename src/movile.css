@@ -1,0 +1,92 @@
+@media (max-width: 1070px) {
+  .modalContainer .modal-content {
+    width: 70%;
+    height: 60%;
+    line-height: 15px;
+    font-size: 30px;
+  }
+
+  .titulo {
+    text-size-adjust: auto;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .modalContainer h1 {
+    font-size: 30px;
+  }
+
+  .modalContainer h2 {
+    font-size: 25px;
+  }
+
+  .modalContainer .close {
+    width: 80px;
+    height: 40px;
+  }
+}
+ @media (max-width: 768px) {
+
+     .container-header {
+  font-family: "Varela Round", Sans-Serif;
+  min-width: 100%;
+  min-height: 45%;
+  background: linear-gradient(90deg,#f5bfdf, #ba64f7);
+  top: 0;
+  margin-top: -2%;
+  position: relative;
+  height: 50%;
+  color: #f5f3f5;
+  padding-bottom: 10px;
+}
+ }
+
+@media (max-width: 768px) {
+    .vectorial-wave {
+        display: none;
+    }
+
+    .container-header {
+      background-color: #ba64f7;
+      background: #ba64f7;
+      line-height: 28px;
+    }
+
+    .body-data {
+        background: url(media/grid.jpg) no-repeat;
+        background-size: cover;
+       background-attachment: fixed;
+        
+    }
+
+}
+
+@media (max-width: 590px) {
+
+    .colum{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 70%;
+    
+  }
+
+ 
+  .modalContainer .close {
+    font-size: 14px;
+    width: 50px;
+    height: 20px;
+    margin-bottom: 5%;
+  }
+.cita {
+    display: none;
+}
+}
+
+@media (max-width: 425px) {
+    .nav-bar {
+        width: 400px;
+        height: 200%;
+
+    }
+}

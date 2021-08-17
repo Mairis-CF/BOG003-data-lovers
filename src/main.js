@@ -48,6 +48,9 @@ document.addEventListener('DOMContentLoaded', function mostrarModal() {
 })
 
 
+
+
+
 //función para generar tarjetas de peliculas dinamicamente
 //el parametro peliculas se encuentra anteriormente como constante
 
@@ -58,10 +61,11 @@ const fragment = document.createDocumentFragment();
 
 const mostrarcard = peliculas => {
 	peliculas.forEach(pelicula => {
-		templateCard.querySelector('h4').textContent = pelicula.title
+		templateCard.querySelector('h3').textContent = pelicula.title
 		templateCard.querySelector('h6').textContent = pelicula.release_date
 		templateCard.querySelector('h5').textContent = pelicula.director
 		templateCard.querySelector('img').setAttribute('src', pelicula.poster)
+		templateCard.querySelector('h4').textContent = 'Score: ' + pelicula.rt_score
 		const clone = templateCard.cloneNode(true)
 
 		fragment.appendChild(clone)
@@ -103,4 +107,40 @@ sort.addEventListener('change', () => {
 })
 
 
+//menú lateral
 
+let showMenu = document.getElementById('show-menu');
+let menu = document.getElementById('nav');
+let closeMenu = document.getElementsByClassName('close-nav')[0];
+
+showMenu.addEventListener('click', () => {
+
+	menu.style.display = 'block';
+
+})
+
+//cerrando menu lateral
+
+closeMenu.addEventListener('click', () => {
+	menu.style.display = 'none';
+})
+
+//Sección estadisticas
+
+let sectionStadistics = document.getElementById('stadistic-section');
+let showStadistics = document.getElementById('stadistics');
+
+showStadistics.addEventListener('click', () => {
+console.log('hey x2');
+	sectionStadistics.style.display = 'block';
+	items.style.display = 'none';
+
+});
+
+//botón inicio
+let btnHome = document.getElementById('btn-Home');
+
+btnHome.addEventListener('click', () => {
+	sectionStadistics.style.display = 'none';
+	items.style.display = 'block';
+})

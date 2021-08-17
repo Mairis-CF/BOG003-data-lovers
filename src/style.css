@@ -2,36 +2,19 @@
 .body-data {
   margin: 0%;
   padding: 0px;
-  margin-top: 0%;
+  margin: 0%;
+  margin-right: 0%;
   height: 100vh;
+  width: 100%;
   line-height: 1.5em;
-  background-color: rgb(241, 198, 245);
+  background-color: rgb(255, 255, 255);
   box-sizing: border-box;
   font-family: "Varela Round", Sans-Serif;
 }
 
 
-@media (max-width: 990px) {
-  
 
-  .titulo {
-    padding: 5px;
-    height: 100%;
-    width: 100%;
-    text-size-adjust: auto;
-    font-size: 40px;
-    line-height: 40px;
-  }
-
- 
-  .modalContainer .modal-content {
-    width: 70%;
-  }
-
-}
-
-
-/*Contenido textual de la pagina*/
+/*Contenido textual de la ventana modal*/
 
 .titulo {
   font-family: "Varela Round", Sans-Serif;
@@ -72,7 +55,7 @@
 .modalContainer {
 
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   padding-top: 90px;
   left: 0;
   top: 0;
@@ -104,7 +87,7 @@
 }
 
 .modalContainer .close {
-  width: 150px;
+  width: 120px;
   height: 50px;
   border-radius: 15px;
   border-width: 5px;
@@ -112,7 +95,7 @@
   color: #b997da;
   background-color: #f7b5ef00;
   font-family: "Varela Round", Sans-Serif;
-  font-size: 20px;
+  font-size: 18px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -128,36 +111,32 @@
 
 /*fin ventana modal */
 
-/*estilos al botón de filtrado*/
+/*estilos a botones de filtrado y organizado*/
 
-#btnFilter, #btnSort{
-  width: 120px;
-  height: 40px;
-  border-radius: 15px;
-  border-width: 5px;
-  border-color: #b997da;
-  color: #683897;
-  background-color: #f7b5e9e3;
-  font-family: "Varela Round", Sans-Serif;
-  margin-bottom: 1em;
-  margin-top: 2%;
-  float: right;
-  margin-right: 2%;
+#btnSort, #btnFilter {
+  border-style: none;
+   font-family: "Varela Round", Sans-Serif;
+    text-decoration: none;
+   font-size: 18px;
+   font-weight: 300;
+   letter-spacing: 1px;
+   color: #ba64f7;
+   background-color: #e7cce400;
+   cursor: pointer;
 }
-
 /*estilos aplicados a las tarjetas de peliculas*/
 .row {
   display: flex;
-  padding: 5px;
   flex-wrap: wrap;
-  margin-left: 5%;
-
-  margin-top: 10%;
+  margin-right: 3%;
+  margin-left: 3%;
+  align-items: center;
+  margin-top: 5%;
 }
 
 .colum {
   flex: 20%;
-  padding: 25px;
+  padding: 10px;
 }
 
 .card {
@@ -168,7 +147,7 @@
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   text-align: center;
-  width: 100%;
+  width: 250px;
   height: 100%;
   margin-bottom: 10px;
   min-width: 200px;
@@ -184,6 +163,8 @@
 .card-body {
   padding: auto;
   position: relative;
+  line-height: 1%;
+  
 }
 
 .card-title {
@@ -197,30 +178,17 @@
   padding-top: 10px;
 }
 
-@media (max-width: 550px) {
-  .colum {
-    flex: 20%;
-    min-width: 190px;
-  }
-  .header-text {
-    line-height: 36px;
-  }
-}
-
-@media (min-width: 810px) {
-  .colum {
-    flex: 20%;
-  }
-}
-
+/*banner de la página*/
 .container-header {
   font-family: "Varela Round", Sans-Serif;
   min-width: 100%;
-  min-height: 40%;
-  background: linear-gradient(90deg, #b982c2, #f0a7a7, #e7b4d4);
+  min-height: 45%;
+  background: linear-gradient(90deg, #a8dde4,#f5bfdf, #c884f8);
+  top: 0;
   margin-top: -2%;
   position: relative;
-  height: 45%;
+  height: 50%;
+  color: #f5f3f5;
   padding-bottom: 10px;
 }
 
@@ -228,9 +196,7 @@
   padding-top: 45px;
   color: white;
 }
-.conoce-peliculas {
-  color: white;
-}
+
 
 #totoro-header {
   width: 18%;
@@ -246,143 +212,169 @@
   }
 }
 /*estilos para el menú lateral */
-
-.barra {
-  font-family: "Varela Round", Sans-Serif;
-  margin-top: -10%;
-  width: 5%;
-  height: 100vh;
-  min-width: 5%;
-  min-height: 100%;
+.nav-bar{
   position: absolute;
-  top: 25%;
+  z-index: 2;
+  left: 0;
+  width: 300px;
+  height: 120%;
+  display: flex;
+  justify-content: auto;
+  flex-direction: column;
+  background-color: #ffffffe1;
+  top: 0;
+ display: none;
+ color: #c884f8;
 
-  transition: 0.4s all;
+
+}
+.nav-bar .close-nav{
+  text-transform: uppercase;
+  font-size: 30px;
+  padding-left: 5px;
+  cursor: pointer;
+  padding-top: 5px;
+
+}
+
+
+.nav-bar .menu-title{
+  text-align: center;
+  padding: 5px;
+}
+
+.menu-icons {
 
   z-index: 1;
-}
-
-.barra ul {
-  padding: 0px;
-  text-align: center;
-
-  justify-items: center;
-}
-
-.barra li {
-  transition: 0.3s ease;
-}
-
-.barra-item {
-  text-decoration: none;
-  list-style: none;
-  transition: 0.3s all;
-  font-size: 0px;
-  padding: 0px;
-  display: none;
-}
-
-.barra h2 {
-  text-align: center;
-  color: #252525;
-  padding: 7px;
-  margin-top: 20%;
-
-  font-size: 0px;
-}
-
-.barra img {
-  padding-top: 10px;
-  padding-left: 20px;
-  width: 30px;
-  height: 20px;
-  position: relative;
-  top: -5%;
-}
-
-@media (max-width: 810px) {
-  .barra img {
-    position: relative;
-    top: -25%;
-  }
-  .barra {
-    margin-top: -12%;
-    min-height: 100%;
-    min-width: 40%;
-  }
-}
-
-@media (max-width: 650px) {
-  .barra img {
-    top: -25%;
-    position: relative;
-  }
-  .barra {
-    margin-top: -15%;
-    min-height: 100%;
-    min-width: 50%;
-  }
-}
-
-.barra:hover {
-  width: 30%;
-  height: 100%;
-  top: 17%;
-  bottom: 0;
-  padding-bottom: 36px;
+  padding-left: 5px;
   position: absolute;
-
-  background-color: #f2d5f8;
+  width: 65px;
+  height: 30px;
+  top: 0;
+ 
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  
 }
 
-.barra:hover h2 {
-  padding: 10px;
-  font-size: 36px;
+ .nav-item {
+   list-style: none;
+   margin: 25px;
+   color: #ba64f7;
+   padding: 5%;
+   
+ }
+
+ .nav-link{
+   text-decoration: none;
+   font-size: 18px;
+   font-weight: 300;
+   letter-spacing: 1px;
+   color: #ba64f7;
+   cursor: pointer;
+
+ }
+
+ .nav-link:hover{
+   background-color: #ba64f7;
+   color: #ffe9fc;
+   padding: 10px;
+   transition: all 0.3s ease;
+   width: 100%;
+
+ }
+
+.pulse3, .pulse2 {
+  background-color: rgb(252, 252, 252);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+ 
 }
 
-.barra:hover a {
-  font-size: 20px;
-  color: #4b4a4a;
-  display: block;
-  padding: 20px;
-  width: auto;
-  height: auto;
-  text-decoration: bold;
+.pulse1 {
+  background-color: var(--primary);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+ 
+  animation: pulse 2s infinite;
 }
 
-.barra:hover img {
-  height: 0%;
+:root {
+  --primary: #ba64f7;
+
+  --secondary: #ba64f700; 
 }
 
-.barra:hover a:hover {
-  font-size: 25px;
-  padding: 30px 0px;
-  background-color: #dbc1e0;
+@keyframes pulse {
+  from {
+    box-shadow: var(--primary) 0 0 0 0 ;
+  }
+
+  to {
+    box-shadow: var(--secondary) 0 0 0 12px;
+  }
 }
 
+.contact-icon {
+  width: 30%;
+  height: 30%;
+  padding: 5px;
+  cursor: pointer;
+}
 .btn-inicio {
-  display: none;
-  width: 150px;
-  height: 50px;
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
   border-radius: 15px;
   border-width: 5px;
-  border-color: #b997da;
-  color: #b997da;
+  border-color: #a8dde4;
+  color: #85c8d1;
   background-color: #f7b5ef00;
   font-family: "Varela Round", Sans-Serif;
-  font-size: 20px;
+  font-size: 18px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
 }
 
 .btn-inicio:hover {
-  color: #ffddd2;
-  box-shadow: 0 10px 16px #e7cce4;
+  color: #fcfcfc;
+  box-shadow: 0 6px 10px #a8dde4;
   transition: all 0.3s ease;
-  background-color: #8133ca;
+  background-color: #a8dde4;
 }
 
-.barra:hover button {
-  display: block;
+/*iconos y sección estadisticas*/
+
+.score_icon {
+width: 5%;
+height: 5%;
+}
+
+.scoreFeedback-icon{
+  width: 10%;
+  height: 10%;
+}
+
+.stadistics-content{
+  display: none;
+  justify-self: center;
+  margin: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+padding: 5%;
+  width: 75%;
+  height: 80%;
+   background: rgba(255, 255, 255, 0.548);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
 }
