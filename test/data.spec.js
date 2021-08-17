@@ -1,4 +1,8 @@
-import { filterDataNews, filterDataOlder, sortZA } from '../src/data.js';
+import { filterDataNews, 
+  
+  filterDataOlder, 
+ sortZA 
+} from '../src/data.js';
 
 const moviesToTest = [
   {
@@ -92,6 +96,57 @@ const moviesOlder = [
     expect(resultOlder).toStrictEqual(moviesOlder);
   });
 });
+
+const testghibli = [
+  {
+    title: "From Up on Poppy Hill",
+    release_date: "2011",
+  },
+  {
+    title: "Grave of the Fireflies",
+    release_date: "1988",
+  },
+
+  {
+    title: "Ponyo on the Cliff by the Sea",
+    release_date: "2008"
+  },
+  {
+    title: "When Marnie Was There",
+    release_date: "2014",
+  },
+
+];
+
+
+describe('filterDataNews', () => {
+  it('is a function', () => {
+    expect(typeof filterDataNews).toBe('function');
+  });
+
+  const dataReciente = [
+  
+  {
+    title: "Ponyo on the Cliff by the Sea",
+    release_date: "2008"
+  },
+  {
+    title: "From Up on Poppy Hill",
+    release_date: "2011",
+  },
+  
+  {
+    title: "When Marnie Was There",
+    release_date: "2014",
+  },];
+
+  it('   filtrar peliculas >=2000 ', () => {
+    expect(filterDataNews(testghibli)).toEqual(expect.arrayContaining(dataReciente)
+    );
+  });
+})
+
+
 
 
 describe('sortZA', () => {
