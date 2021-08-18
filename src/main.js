@@ -4,7 +4,7 @@ import data from './data/ghibli/ghibli.js';
 import {    
 	filterDataNews, 
 	filterDataOlder,
-	//scoreHigh , 
+	scoreHigh , 
 	sortAZ, 
 	sortZA, 
 	//average
@@ -151,3 +151,4 @@ btnHome.addEventListener('click', () => {
 	sectionStadistics.style.display = 'none';
 	items.style.display = 'block';
 })
+const showscorehg = document.getElementById('highstadic').innerHTML=scoreHigh(peliculas)+ " % "+"  de las peliculas obtuvo puntaje sobre 90"

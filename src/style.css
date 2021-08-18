@@ -378,3 +378,8 @@ padding: 5%;
   border: 1px solid rgba(255, 255, 255, 0.18);
   text-align: center;
 }
+.scorehg{
+  background:#c884f8;
+  color: #fcfcfc;
+  font-size: 150%
+}
