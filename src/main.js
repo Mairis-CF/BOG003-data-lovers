@@ -140,7 +140,7 @@ let showStadistics = document.getElementById('stadistics');
 showStadistics.addEventListener('click', () => {
 console.log('hey x2');
 	sectionStadistics.style.display = 'block';
-	items.style.display = 'none';
+	clearItems(peliculas)
 
 });
 
@@ -149,6 +149,7 @@ let btnHome = document.getElementById('btn-Home');
 
 btnHome.addEventListener('click', () => {
 	sectionStadistics.style.display = 'none';
-	items.style.display = 'block';
+	clearItems(peliculas)
+	mostrarcard(peliculas)
 })
 const showscorehg = document.getElementById('highstadic').innerHTML=scoreHigh(peliculas)+ " % "+"  de las peliculas obtuvo puntaje sobre 90"

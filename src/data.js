@@ -39,7 +39,7 @@ export function filterDataOlder(productions) {
 }
 
 //funcion sort de A-Z
-//export const sortAZ = productions.sort((a, b) => (a.title > b.title ? 1 : -1));
+
 
 export function sortAZ(productions) {
   return productions.sort((a, b) => (a.title > b.title ? 1 : -1));
