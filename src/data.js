@@ -51,14 +51,30 @@ export function sortZA(productions) {
 }
 
  //funcion para porcentaje de  score> 90 puntos
+ /*
 export function scoreHigh(productions) {
-  let average = productions.filter(movie =>parseInt(movie.rt_score)>= 90);
-  //console.table(average) 
-  
+  let average = productions.filter(movie =>parseInt(movie.rt_score) >= 90);
+
   let prom1 = average.length;
   let prom2 = productions.length
   let percentaje = (prom1 / prom2) * 100;
   return percentaje
 
+} 
+*/
+export function estimateScores (productions) {
+   let score_medium = productions.filter(movie =>  movie.rt_score <90);
+  let score_high = productions.filter(movie => movie.rt_score >90);
+  let total = parseInt(productions.length);
+  let highMovies = (score_high.length * 100) / total;
+   let mediumMovies = (score_medium.length * 100) / total;
+   
+   let averages = {
+     high: highMovies,
+     medium: mediumMovies
+   }
+   
+   return averages
+   
 }
-//console.log(scoreHigh())
+

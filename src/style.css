@@ -340,7 +340,7 @@
   padding: 5px;
   cursor: pointer;
 }
-.btn-inicio {
+.btn-inicio, #btnScores, #btnCloseScore {
   cursor: pointer;
   width: 100px;
   height: 40px;
@@ -356,7 +356,7 @@
   position: relative;
 }
 
-.btn-inicio:hover {
+.btn-inicio, #btnScores:hover {
   color: #fcfcfc;
   box-shadow: 0 6px 10px #a8dde4;
   transition: all 0.3s ease;
@@ -391,4 +391,8 @@ padding: 5%;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   text-align: center;
+}
+
+#resultScore {
+  display: none;
 }

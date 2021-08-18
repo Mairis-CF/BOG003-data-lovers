@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width initial-scale = 1.0" />
     <meta charset="utf-8" />
     <title>GhibliNautas</title>
-    <link rel="stylesheet" href="movile.css">
+    <link rel="stylesheet" href="movile.css" />
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Noto+Serif|Varela+Round"
@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css?family=Merriweather|Muli:300"
       rel="stylesheet"
     />
-    <link rel="shortcut icon" type="image/jpg" href="media/favicon.ico"/>
+    <link rel="shortcut icon" type="image/jpg" href="media/favicon.ico" />
   </head>
 
   <body class="body-data">
@@ -92,7 +92,9 @@
           </select>
         </li>
 
-        <li class="nav-item"><button id="btn-Home" class="btn-inicio">Inicio</button></li>
+        <li class="nav-item">
+          <button id="btn-Home" class="btn-inicio">Inicio</button>
+        </li>
         <li class="nav-item">
           <h5>Contactános</h5>
           <a href="mailto:mairiscastroflorez@gmail.com?"
@@ -120,15 +122,14 @@
             <img class="score_icon" src="media/score.png" alt="score_icon" />
             <h4 class="score_rating">Score</h4>
           </div>
-              </div>
-              </div>
+        </div>
+      </div>
     </template>
-
 
     <!--Sección de estadisticas-->
 
     <div id="container-stadistics">
-      <div id= "stadistic-section" class="stadistics-content">
+      <div id="stadistic-section" class="stadistics-content">
         <h1>Estadisticas</h1>
         <h2>
           Asi ha sido el desempeño de las producciones de estudio Ghibli durante
@@ -146,10 +147,19 @@
             durante su temporada de promoción posterior a su estreno.</i
           >
         </h6>
+        <button id="btnScores">Ver más</button>
+        <br /> <br>
+        <section id="resultScore">
+          <img class="score_icon" src="media/medal.png" alt="score_icon" />
+          <p id="highResult"></p>
+          <hr />
+          <img class="score_icon" src="media/stars.png" alt="score_icon" />
+          <p id="mediumResult"></p>
+          <br />
+          <button id="btnCloseScore">¡Cool!</button>
+        </section>
       </div>
     </div>
-
-  
 
     <script src="main.js" type="module"></script>
   </body>

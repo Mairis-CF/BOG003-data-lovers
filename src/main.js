@@ -1,16 +1,17 @@
 
 import data from './data/ghibli/ghibli.js';
 
-import {    
-	filterDataNews, 
+import {
+	estimateScores,
+	filterDataNews,
 	filterDataOlder,
 	//scoreHigh , 
-	sortAZ, 
-	sortZA, 
-	//average
+	sortAZ,
+	sortZA,
+
 } from './data.js';
- 
-//console.table(filterCharacter())
+
+
 
 const peliculas = data.films;
 
@@ -53,8 +54,6 @@ document.addEventListener('DOMContentLoaded', function mostrarModal() {
 		}
 	}
 })
-
-
 
 
 
@@ -113,6 +112,29 @@ sort.addEventListener('change', () => {
 	}
 })
 
+//la sección de resultados estadisticos dentro de la sección estadisticas, se muestra con este botón
+const btnScore = document.getElementById('btnScores');
+const sectionScores = document.getElementById('resultScore');
+
+btnScore.addEventListener('click', () => {
+	sectionScores.style.display = 'block'
+})
+
+const btnCloseScore = document.getElementById('btnCloseScore');
+
+btnCloseScore.addEventListener('click', () => {
+	sectionScores.style.display = 'none';
+})
+
+//mostrando cifras estadisticas 
+
+const resultScore = estimateScores(peliculas);
+let highText = document.getElementById('highResult');
+let mediumText = document.getElementById('mediumResult');
+
+highText.innerHTML = 'De ' + (peliculas.length) + ' peliculas de Studio Ghibli recopiladas en esta página alrededor del ' + (resultScore.high) + ' % tienen una puntuación mayor a 90 puntos.';
+mediumText.innerHTML = 'De ' + (peliculas.length) + ' peliculas de Studio Ghibli recopiladas en esta página alrededor del ' + (resultScore.medium) + ' % tienen una puntuación comprendida entre 50 y 90 puntos.';
+
 
 //menú lateral
 
@@ -138,7 +160,7 @@ let sectionStadistics = document.getElementById('stadistic-section');
 let showStadistics = document.getElementById('stadistics');
 
 showStadistics.addEventListener('click', () => {
-console.log('hey x2');
+	console.log('hey x2');
 	sectionStadistics.style.display = 'block';
 	clearItems(peliculas)
 
