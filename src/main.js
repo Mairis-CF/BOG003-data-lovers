@@ -5,7 +5,6 @@ import {
 	estimateScores,
 	filterDataNews,
 	filterDataOlder,
-	//scoreHigh , 
 	sortAZ,
 	sortZA,
 
@@ -160,7 +159,6 @@ let sectionStadistics = document.getElementById('stadistic-section');
 let showStadistics = document.getElementById('stadistics');
 
 showStadistics.addEventListener('click', () => {
-	console.log('hey x2');
 	sectionStadistics.style.display = 'block';
 	clearItems(peliculas)
 
