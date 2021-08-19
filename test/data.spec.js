@@ -244,24 +244,21 @@ describe('sortAZ', () => {
 });
 
 
-const average = {
-  highAverage: (92 * 100) / 20,
-  lowAverage: (80 * 100) / 20
-}
+
 
 describe('estimateScores', () => {
   it('is a function', () => {
     expect(typeof estimateScores).toBe('function');
   });
 
-  const outputAverages = {
+  const outPutAverages = {
     high: 460,
     low: 400
   }
 
-  it('To average should return the result of the operations', () => {
-    let resultAverage = estimateScores(average)
-    expect(resultAverage).toEqual(outputAverages);
+  it('it should return the values in outputAverages', () => {
+    expect(estimateScores(92, 80)).toEqual(expect.objectContaining(outPutAverages)
+    );
   });
 });
 

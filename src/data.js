@@ -50,7 +50,7 @@ export function sortZA(productions) {
 //función que calcula porcentaje de acuerdo al raiting score de cada pelicula
 
 export function estimateScores(productions) {
-  let score_medium = productions.filter(movie => movie.rt_score < 90);
+  let score_medium = productions.filter(movie => movie.rt_score < 90)
   let score_high = productions.filter(movie => movie.rt_score > 90);
   let total = parseInt(productions.length);
   let highMovies = (score_high.length * 100) / total;
