@@ -1,6 +1,6 @@
 import {
-  estimateScores,
   filterDataNews,
+  estimateScores,
   filterDataOlder,
   sortZA,
   sortAZ
@@ -140,15 +140,14 @@ describe('filterDataNews', () => {
     {
       title: "When Marnie Was There",
       release_date: "2014",
-    },];
-
+    },
+  ];
+  
   it('  For moviesToTest should return those with a relase_date over than 2000 ', () => {
     expect(filterDataNews(testghibli)).toEqual(expect.arrayContaining(dataReciente)
     );
   });
 })
-
-
 
 
 describe('sortZA', () => {
@@ -242,7 +241,6 @@ describe('sortAZ', () => {
     expect(resultSortAZ).toStrictEqual(moviesSortAZ);
   });
 });
-
 
 
 
