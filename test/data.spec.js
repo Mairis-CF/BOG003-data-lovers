@@ -1,7 +1,9 @@
-import { filterDataNews, 
-  
-  filterDataOlder, 
- sortZA 
+import {
+  filterDataNews,
+
+  filterDataOlder,
+  sortZA,
+  sortAZ
 } from '../src/data.js';
 
 const moviesToTest = [
@@ -11,19 +13,19 @@ const moviesToTest = [
     "release_date": "1986",
     "rt_score": "95",
   },
-{
+  {
     "title": "My Neighbor Totoro",
     "director": "Hayao Miyazaki",
     "release_date": "1988",
     "rt_score": "93",
   },
-{
+  {
     "title": "My Neighbors the Yamadas",
     "director": "Isao Takahata",
     "release_date": "1999",
     "rt_score": "75",
   },
-{
+  {
     "title": "When Marnie Was There",
     "director": "Hiromasa Yonebayashi",
     "release_date": "2014",
@@ -49,12 +51,12 @@ describe('filterDataNews', () => {
       "release_date": "2014",
       "rt_score": "92",
     },
-     {
-    "title": "The Wind Rises",
-    "director": "Hayao Miyazaki",
-    "release_date": "2013",
-    "rt_score": "89",
-  }
+    {
+      "title": "The Wind Rises",
+      "director": "Hayao Miyazaki",
+      "release_date": "2013",
+      "rt_score": "89",
+    }
   ]
 
   it('To moviesToTest should return those with a relase_date over to 2000', () => {
@@ -64,31 +66,31 @@ describe('filterDataNews', () => {
 });
 
 describe('filterDataOlder', () => {
-it('is a function', () =>{
-  expect(typeof filterDataOlder).toBe('function');
-});
+  it('is a function', () => {
+    expect(typeof filterDataOlder).toBe('function');
+  });
 
-const moviesOlder = [ 
-  {
-    "title": "Castle in the Sky",
-    "director": "Hayao Miyazaki",
-    "release_date": "1986",
-    "rt_score": "95",
-  },
-{
-    "title": "My Neighbor Totoro",
-    "director": "Hayao Miyazaki",
-    "release_date": "1988",
-    "rt_score": "93",
-  },
-{
-    "title": "My Neighbors the Yamadas",
-    "director": "Isao Takahata",
-    "release_date": "1999",
-    "rt_score": "75",
-  },
+  const moviesOlder = [
+    {
+      "title": "Castle in the Sky",
+      "director": "Hayao Miyazaki",
+      "release_date": "1986",
+      "rt_score": "95",
+    },
+    {
+      "title": "My Neighbor Totoro",
+      "director": "Hayao Miyazaki",
+      "release_date": "1988",
+      "rt_score": "93",
+    },
+    {
+      "title": "My Neighbors the Yamadas",
+      "director": "Isao Takahata",
+      "release_date": "1999",
+      "rt_score": "75",
+    },
 
-]
+  ]
 
 
   it('To moviesToTest should return those with a relase_date lower than 2000', () => {
@@ -125,20 +127,20 @@ describe('filterDataNews', () => {
   });
 
   const dataReciente = [
-  
-  {
-    title: "Ponyo on the Cliff by the Sea",
-    release_date: "2008"
-  },
-  {
-    title: "From Up on Poppy Hill",
-    release_date: "2011",
-  },
-  
-  {
-    title: "When Marnie Was There",
-    release_date: "2014",
-  },];
+
+    {
+      title: "Ponyo on the Cliff by the Sea",
+      release_date: "2008"
+    },
+    {
+      title: "From Up on Poppy Hill",
+      release_date: "2011",
+    },
+
+    {
+      title: "When Marnie Was There",
+      release_date: "2014",
+    },];
 
   it('   filtrar peliculas >=2000 ', () => {
     expect(filterDataNews(testghibli)).toEqual(expect.arrayContaining(dataReciente)
@@ -154,41 +156,84 @@ describe('sortZA', () => {
     expect(typeof sortZA).toBe('function');
   });
 
-const moviesSortZA = [
-  {
-    "title": "When Marnie Was There",
-    "director": "Hiromasa Yonebayashi",
-    "release_date": "2014",
-    "rt_score": "92",
-  },
-  {
-    "title": "The Wind Rises",
-    "director": "Hayao Miyazaki",
-    "release_date": "2013",
-    "rt_score": "89",
-  },
-  {
-    "title": "My Neighbors the Yamadas",
-    "director": "Isao Takahata",
-    "release_date": "1999",
-    "rt_score": "75",
-  },
-  {
-    "title": "My Neighbor Totoro",
-    "director": "Hayao Miyazaki",
-    "release_date": "1988",
-    "rt_score": "93",
-  },
+  const moviesSortZA = [
     {
-    "title": "Castle in the Sky",
-    "director": "Hayao Miyazaki",
-    "release_date": "1986",
-    "rt_score": "95",
-  },
-]  
+      "title": "When Marnie Was There",
+      "director": "Hiromasa Yonebayashi",
+      "release_date": "2014",
+      "rt_score": "92",
+    },
+    {
+      "title": "The Wind Rises",
+      "director": "Hayao Miyazaki",
+      "release_date": "2013",
+      "rt_score": "89",
+    },
+    {
+      "title": "My Neighbors the Yamadas",
+      "director": "Isao Takahata",
+      "release_date": "1999",
+      "rt_score": "75",
+    },
+    {
+      "title": "My Neighbor Totoro",
+      "director": "Hayao Miyazaki",
+      "release_date": "1988",
+      "rt_score": "93",
+    },
+    {
+      "title": "Castle in the Sky",
+      "director": "Hayao Miyazaki",
+      "release_date": "1986",
+      "rt_score": "95",
+    },
+  ]
 
   it('To moviesToTest should return a sorted array with an inverse order from Z to A', () => {
     let resultSortZA = sortZA(moviesToTest)
     expect(resultSortZA).toStrictEqual(moviesSortZA);
+  });
+});
+describe('sortAZ', () => {
+  it('is a function', () => {
+    expect(typeof sortAZ).toBe('function');
+  });
+  const moviessortAZ = [
+    {
+      "title": "Castle in the Sky",
+      "director": "Hayao Miyazaki",
+      "release_date": "1986",
+      "rt_score": "95",
+    },
+
+    {
+      "title": "My Neighbor Totoro",
+      "director": "Hayao Miyazaki",
+      "release_date": "1988",
+      "rt_score": "93",
+    },
+    {
+      "title": "My Neighbors the Yamadas",
+      "director": "Isao Takahata",
+      "release_date": "1999",
+      "rt_score": "75",
+    },
+    {
+      "title": "The Wind Rises",
+      "director": "Hayao Miyazaki",
+      "release_date": "2013",
+      "rt_score": "89",
+    },
+    {
+      "title": "When Marnie Was There",
+      "director": "Hiromasa Yonebayashi",
+      "release_date": "2014",
+      "rt_score": "92",
+    },
+    
+  ]
+  it('To moviesToTest should return a sorted array with an order from A to Z', () => {
+    let resultSortAZ = sortAZ(moviesToTest)
+    expect(resultSortAZ).toStrictEqual(moviessortAZ);
   });
 });
