@@ -10,15 +10,12 @@ import {
 
 } from './data.js';
 
-
-
 const peliculas = data.films;
 
 //función que limpia el contenedor de la data
 function clearItems() {
 	items.innerHTML = ''
 }
-
 
 //ventana modal desplegada  automaticamente al cargar la página de inicio
 //la ventana se muestra solo luego de que el body este cargado pero esto podria hacerse retirando el atributo 'hide' de su clase css
