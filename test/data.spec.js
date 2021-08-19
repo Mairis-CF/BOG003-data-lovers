@@ -255,7 +255,7 @@ describe('estimateScores', () => {
     high: 460,
     low: 400
   }
-
+//error de tipado
   it('it should return the values in outputAverages', () => {
     expect(estimateScores(92, 80)).toEqual(expect.objectContaining(outPutAverages)
     );
