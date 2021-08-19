@@ -28,6 +28,7 @@ En GhibliNautas traemos en una interfaz sencilla y limpia los principales datos 
 #### Objetivo cohorte
 El objetivo principal de este proyecto es que, entendiendo las necesidades de los usuarios, se diseñe y construya una interfaz web donde se pueda visualizar, ordenar, filtrar y realizar cálculos estadisticos con la información.
 
+*Puedes visitarnos en gh pages [aquí](https://mairis-cf.github.io/BOG003-data-lovers/src/index.html)*
 
 
 Investigación UX
@@ -144,5 +145,9 @@ La aplicación web fue puesta a prueba por diferentes usuarios que expresaron su
 :::info
 **¿Tienes dudas sobre este documento** ¡Ponte en contacto!
 :::
+
+Este proyecto fue realizado en dupla entre Mairis Castro y Maria Elena Arroyo
+---
+
 
 ###### tags: `JavaScript` `Documentation` `ECMAScript6` `JSON` `Student`
