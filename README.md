@@ -144,10 +144,12 @@ La aplicación web fue puesta a prueba por diferentes usuarios que expresaron su
 
 :::info
 **¿Tienes dudas sobre este documento** ¡Ponte en contacto!
-:::
 
-Este proyecto fue realizado en dupla entre Mairis Castro y Maria Elena Arroyo
----
+
+
+* este proyecto fue realizado en dupla entre Mairis Castro y Maria Elena Arroyo
+
+
 
 
 ###### tags: `JavaScript` `Documentation` `ECMAScript6` `JSON` `Student`
